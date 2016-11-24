@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace CesarCoder.Methods
+﻿namespace CesarCoder.Methods
 {
     /// <summary>
     /// Аффинный шифр
@@ -59,7 +56,7 @@ namespace CesarCoder.Methods
 
             if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z')
             {
-                offset = Char.IsUpper(ch) ? 'A' : 'a';
+                offset = System.Char.IsUpper(ch) ? 'A' : 'a';
 
                 return (char)(((a * (ch - offset) + b) % 26) + offset);
             }
@@ -79,7 +76,7 @@ namespace CesarCoder.Methods
 
             if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z')
             {
-                offset = Char.IsUpper(ch) ? 'A' : 'a';
+                offset = System.Char.IsUpper(ch) ? 'A' : 'a';
                 return (char)(((Reverse(a) * ((ch - offset) - b + 26)) % 26) + offset);
             }
             return (ch);
@@ -92,7 +89,7 @@ namespace CesarCoder.Methods
         /// <returns></returns>
         private static char Reverse(char a)
         {
-            Dictionary<char, int> ReverseA = new Dictionary<char, int>()
+            System.Collections.Generic.Dictionary<char, int> ReverseA = new System.Collections.Generic.Dictionary<char, int>()
             {
                 { (char)(1),    1     },
                 { (char)(3),    9     },
