@@ -15,8 +15,8 @@ namespace CesarCoder
         FileClass File = new FileClass();
         int count = 0;
         Timer timer = new Timer() { Interval = 100  };
+        string title = "";
 
-        
 
         public Form1()
         {
@@ -94,7 +94,7 @@ namespace CesarCoder
                 label2.Visible = true;
                 textBox4.Visible = true;
 
-                textBox3.KeyPress -= OnlyNumber_KeyPress;
+                //textBox3.KeyPress -= OnlyNumber_KeyPress;
             }
             if (comboBox1.SelectedIndex == 2)
             {
@@ -249,12 +249,15 @@ namespace CesarCoder
                 "Никогда с коленей на ноги не встанут, \nДаже если их скрутить в бараний рог, \nСиние киты — пучин морских титаны. \nНет у них коленей. Как и ног."
                 };
             MessageBox.Show(poem[rand.Next(poem.Length)], "Стихи");
+            // by_Elijah_Black
         }
 
         private void кнопкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // тут мне уже стало скучно
             Random rand = new Random();
+            title = Text;
+            Text = "by Elijah Black";
             // BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
             timer.Start();
         }
@@ -269,6 +272,7 @@ namespace CesarCoder
                 timer.Stop();
                 BackColor = DefaultBackColor;
                 count = 0;
+                Text = title;
             }
         }
 

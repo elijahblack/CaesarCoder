@@ -114,7 +114,7 @@ namespace CesarCoder
         /// <returns>Возвращает шифрованный символ</returns>
         private static char GammaCipherCoding(char ch, int key)
         {
-            return (char)(Math.Pow(ch, key));
+            return (char)(ch ^ key);
         }
     }
 }

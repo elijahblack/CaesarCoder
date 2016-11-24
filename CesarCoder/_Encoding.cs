@@ -67,7 +67,7 @@ namespace CesarCoder
                 foreach (char element in input.ToCharArray())
                 {
                     txt += _Encoding.GammaCipherEncoding(element, key);
-                    key = (key * Reverse((char)A) - B) % m;   // key = (key * A + B) % m;
+                    key = (key * A + B) % m;  
                 }
             }
             else System.Windows.Forms.MessageBox.Show("Ошибка: \nНОД = " + Mathematics.GCD(B, m), "Ошибка");
@@ -115,31 +115,31 @@ namespace CesarCoder
         /// <returns>Возвращает шифрованный символ</returns>
         private static char GammaCipherEncoding(char ch, int key)
         {
-            return (char)(Math.Pow(ch, -key));
+            return (char)(ch ^ key); // это не работает
         }
 
 
         /// <summary>
         /// Возвращает число, обратное A по модулю 26
         /// </summary>
-        /// <param name="a">Символ, для которого требуется найти обратное число</param>
+        /// <param name="a">Символ, для которого требуется найти обратный номер позиции</param>
         /// <returns></returns>
         private static char Reverse (char a)
         {
             Dictionary<char, int> ReverseA = new Dictionary<char, int>()
             {
-                { (char)(1), 1},
-                { (char)(3), 9},
-                { (char)(5), 21},
-                { (char)(7), 15},
-                { (char)(9), 3},
-                { (char)(11), 19},
-                { (char)(15), 7},
-                { (char)(17), 23},
-                { (char)(19), 11},
-                { (char)(21), 5},
-                { (char)(23), 17},
-                { (char)(25), 25}
+                { (char)(1),    1     },
+                { (char)(3),    9     },
+                { (char)(5),    21    },
+                { (char)(7),    15    },
+                { (char)(9),    3     },
+                { (char)(11),   19    },
+                { (char)(15),   7     },
+                { (char)(17),   23    },
+                { (char)(19),   11    },
+                { (char)(21),   5     },
+                { (char)(23),   17    },
+                { (char)(25),   25    }
             };
 
             return (char)ReverseA[a];
