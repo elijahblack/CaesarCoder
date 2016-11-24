@@ -29,10 +29,6 @@ namespace CesarCoder
             label2.Visible = false;
             textBox4.Visible = false;
             timer.Tick += timer_tick;
-            groupBox1.Size = new System.Drawing.Size(167, 103); // установка размера groupbox
-            button2.Location = new System.Drawing.Point(12, 136); // установка размера кнопки
-            label5.Visible = false; // скрывает M
-            comboBox2.Visible = false; // скрывает combomox
         }
 
         /*
@@ -274,17 +270,6 @@ namespace CesarCoder
                 count = 0;
                 Text = title;
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            // Кнопка создана для ленивого меня 
-            textBox1.Text = "ATTACK AT DAWN";
-            textBox3.Text = "3";
-            textBox4.Text = "4";
-            comboBox1.SelectedIndex = 1;
-            label2.Visible = true;
-            textBox4.Visible = true;
         }
     }
 }
