@@ -41,7 +41,7 @@
             this.транслитToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.кнопкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.стихиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.MethodsGroupBox = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.MethodsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -170,19 +170,19 @@
             this.стихиToolStripMenuItem.Text = "Стихи";
             this.стихиToolStripMenuItem.Click += new System.EventHandler(this.стихиToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // MethodsGroupBox
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 103);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Методы";
+            this.MethodsGroupBox.Controls.Add(this.label2);
+            this.MethodsGroupBox.Controls.Add(this.label1);
+            this.MethodsGroupBox.Controls.Add(this.textBox4);
+            this.MethodsGroupBox.Controls.Add(this.comboBox1);
+            this.MethodsGroupBox.Controls.Add(this.textBox3);
+            this.MethodsGroupBox.Location = new System.Drawing.Point(12, 27);
+            this.MethodsGroupBox.Name = "MethodsGroupBox";
+            this.MethodsGroupBox.Size = new System.Drawing.Size(167, 103);
+            this.MethodsGroupBox.TabIndex = 4;
+            this.MethodsGroupBox.TabStop = false;
+            this.MethodsGroupBox.Text = "Методы";
             // 
             // label2
             // 
@@ -288,7 +288,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 350);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.MethodsGroupBox);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(611, 228);
@@ -297,8 +297,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.MethodsGroupBox.ResumeLayout(false);
+            this.MethodsGroupBox.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -316,7 +316,7 @@
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox MethodsGroupBox;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ToolStripMenuItem магияToolStripMenuItem;

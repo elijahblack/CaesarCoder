@@ -14,7 +14,7 @@ namespace CesarCoder
     {
         FileClass File = new FileClass();
         int count = 0;
-        Timer timer = new Timer() { Interval = 100  };
+        Timer timer = new Timer() { Interval = 70  };
         string title = "";
 
 
@@ -31,15 +31,7 @@ namespace CesarCoder
             timer.Tick += timer_tick;
         }
 
-        /*
-        private void GammaReDraw()
-        {
-            groupBox1.Size = groupBox1.Size.Height == 130 ? new System.Drawing.Size(167, 103) : new System.Drawing.Size(167, 130);
-            button2.Location = button2.Location.Y == 163 ? new System.Drawing.Point(12, 136) : new System.Drawing.Point(12, 163);
-            label5.Visible = label5.Visible? false : true;
-            comboBox2.Visible = comboBox2.Visible? false : true;
-        }*/
-
+       
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // открывает файл и заносит текст в верхний textBox
