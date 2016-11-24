@@ -48,6 +48,9 @@
   <ItemGroup>
     <Compile Include="Coding.cs" />
     <Compile Include="Mathematics.cs" />
+    <Compile Include="Methods\AffineCipher.cs" />
+    <Compile Include="Methods\CaesarCipher.cs" />
+    <Compile Include="Methods\GammaCipher.cs" />
     <Compile Include="PseudoRandomNumberGenerator.cs" />
     <Compile Include="_Encoding.cs" />
     <Compile Include="FileClass.cs" />
@@ -84,6 +87,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
