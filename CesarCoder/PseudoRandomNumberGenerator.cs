@@ -1,5 +1,8 @@
 ﻿namespace CesarCoder
 {
+    /// <summary>
+    /// Класс генератора псевдослучайных чисел
+    /// </summary>
     class PseudoRandomNumberGenerator
     {
         public int A;

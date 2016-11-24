@@ -1,6 +1,6 @@
 ﻿namespace CesarCoder
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.OriginalTextBox = new System.Windows.Forms.TextBox();
+            this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,38 +42,38 @@
             this.кнопкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.стихиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MethodsGroupBox = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.KeyLabel2 = new System.Windows.Forms.Label();
+            this.KeyLabel1 = new System.Windows.Forms.Label();
+            this.KeyTextBox2 = new System.Windows.Forms.TextBox();
+            this.MethodComboBox = new System.Windows.Forms.ComboBox();
+            this.KeyTextBox1 = new System.Windows.Forms.TextBox();
+            this.EditingTextBox = new System.Windows.Forms.TextBox();
+            this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.OriginalLabel = new System.Windows.Forms.Label();
+            this.EditingLabel = new System.Windows.Forms.Label();
+            this.MainMenuStrip.SuspendLayout();
             this.MethodsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
+            this.MainSplitContainer.Panel1.SuspendLayout();
+            this.MainSplitContainer.Panel2.SuspendLayout();
+            this.MainSplitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // OriginalTextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.OriginalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 20);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(480, 132);
-            this.textBox1.TabIndex = 1;
+            this.OriginalTextBox.Location = new System.Drawing.Point(3, 20);
+            this.OriginalTextBox.Multiline = true;
+            this.OriginalTextBox.Name = "OriginalTextBox";
+            this.OriginalTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.OriginalTextBox.Size = new System.Drawing.Size(480, 132);
+            this.OriginalTextBox.TabIndex = 1;
             // 
-            // menuStrip1
+            // MainMenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.магияToolStripMenuItem,
             this.карусельToolStripMenuItem,
@@ -81,11 +81,11 @@
             this.транслитToolStripMenuItem,
             this.кнопкаToolStripMenuItem,
             this.стихиToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(683, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MainMenuStrip.Name = "MainMenuStrip";
+            this.MainMenuStrip.Size = new System.Drawing.Size(683, 24);
+            this.MainMenuStrip.TabIndex = 2;
+            this.MainMenuStrip.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
@@ -172,11 +172,11 @@
             // 
             // MethodsGroupBox
             // 
-            this.MethodsGroupBox.Controls.Add(this.label2);
-            this.MethodsGroupBox.Controls.Add(this.label1);
-            this.MethodsGroupBox.Controls.Add(this.textBox4);
-            this.MethodsGroupBox.Controls.Add(this.comboBox1);
-            this.MethodsGroupBox.Controls.Add(this.textBox3);
+            this.MethodsGroupBox.Controls.Add(this.KeyLabel2);
+            this.MethodsGroupBox.Controls.Add(this.KeyLabel1);
+            this.MethodsGroupBox.Controls.Add(this.KeyTextBox2);
+            this.MethodsGroupBox.Controls.Add(this.MethodComboBox);
+            this.MethodsGroupBox.Controls.Add(this.KeyTextBox1);
             this.MethodsGroupBox.Location = new System.Drawing.Point(12, 27);
             this.MethodsGroupBox.Name = "MethodsGroupBox";
             this.MethodsGroupBox.Size = new System.Drawing.Size(167, 103);
@@ -184,152 +184,151 @@
             this.MethodsGroupBox.TabStop = false;
             this.MethodsGroupBox.Text = "Методы";
             // 
-            // label2
+            // KeyLabel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Ключ 2";
+            this.KeyLabel2.AutoSize = true;
+            this.KeyLabel2.Location = new System.Drawing.Point(6, 76);
+            this.KeyLabel2.Name = "KeyLabel2";
+            this.KeyLabel2.Size = new System.Drawing.Size(42, 13);
+            this.KeyLabel2.TabIndex = 9;
+            this.KeyLabel2.Text = "Ключ 2";
             // 
-            // label1
+            // KeyLabel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Ключ";
+            this.KeyLabel1.AutoSize = true;
+            this.KeyLabel1.Location = new System.Drawing.Point(6, 50);
+            this.KeyLabel1.Name = "KeyLabel1";
+            this.KeyLabel1.Size = new System.Drawing.Size(33, 13);
+            this.KeyLabel1.TabIndex = 8;
+            this.KeyLabel1.Text = "Ключ";
             // 
-            // textBox4
+            // KeyTextBox2
             // 
-            this.textBox4.Location = new System.Drawing.Point(51, 73);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(110, 20);
-            this.textBox4.TabIndex = 7;
+            this.KeyTextBox2.Location = new System.Drawing.Point(51, 73);
+            this.KeyTextBox2.Name = "KeyTextBox2";
+            this.KeyTextBox2.Size = new System.Drawing.Size(110, 20);
+            this.KeyTextBox2.TabIndex = 7;
             // 
-            // comboBox1
+            // MethodComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.MethodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MethodComboBox.FormattingEnabled = true;
+            this.MethodComboBox.Items.AddRange(new object[] {
             "Шифр Цезаря",
             "Аффинный шифр",
             "Гаммирование"});
-            this.comboBox1.Location = new System.Drawing.Point(7, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.MethodComboBox.Location = new System.Drawing.Point(7, 20);
+            this.MethodComboBox.Name = "MethodComboBox";
+            this.MethodComboBox.Size = new System.Drawing.Size(154, 21);
+            this.MethodComboBox.TabIndex = 6;
+            this.MethodComboBox.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
-            // textBox3
+            // KeyTextBox1
             // 
-            this.textBox3.Location = new System.Drawing.Point(51, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(110, 20);
-            this.textBox3.TabIndex = 5;
+            this.KeyTextBox1.Location = new System.Drawing.Point(51, 47);
+            this.KeyTextBox1.Name = "KeyTextBox1";
+            this.KeyTextBox1.Size = new System.Drawing.Size(110, 20);
+            this.KeyTextBox1.TabIndex = 5;
             // 
-            // textBox2
+            // EditingTextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.EditingTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(3, 20);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(480, 139);
-            this.textBox2.TabIndex = 5;
+            this.EditingTextBox.Location = new System.Drawing.Point(3, 20);
+            this.EditingTextBox.Multiline = true;
+            this.EditingTextBox.Name = "EditingTextBox";
+            this.EditingTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.EditingTextBox.Size = new System.Drawing.Size(480, 139);
+            this.EditingTextBox.TabIndex = 5;
             // 
-            // splitContainer1
+            // MainSplitContainer
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.MainSplitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(185, 27);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.MainSplitContainer.Location = new System.Drawing.Point(185, 27);
+            this.MainSplitContainer.Name = "MainSplitContainer";
+            this.MainSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // splitContainer1.Panel1
+            // MainSplitContainer.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.MainSplitContainer.Panel1.Controls.Add(this.OriginalLabel);
+            this.MainSplitContainer.Panel1.Controls.Add(this.OriginalTextBox);
             // 
-            // splitContainer1.Panel2
+            // MainSplitContainer.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label4);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(486, 311);
-            this.splitContainer1.SplitterDistance = 145;
-            this.splitContainer1.TabIndex = 6;
+            this.MainSplitContainer.Panel2.Controls.Add(this.EditingLabel);
+            this.MainSplitContainer.Panel2.Controls.Add(this.EditingTextBox);
+            this.MainSplitContainer.Size = new System.Drawing.Size(486, 311);
+            this.MainSplitContainer.SplitterDistance = 145;
+            this.MainSplitContainer.TabIndex = 6;
             // 
-            // label3
+            // OriginalLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Исходный текст";
+            this.OriginalLabel.AutoSize = true;
+            this.OriginalLabel.Location = new System.Drawing.Point(4, 4);
+            this.OriginalLabel.Name = "OriginalLabel";
+            this.OriginalLabel.Size = new System.Drawing.Size(89, 13);
+            this.OriginalLabel.TabIndex = 2;
+            this.OriginalLabel.Text = "Исходный текст";
             // 
-            // label4
+            // EditingLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Конечный текст";
+            this.EditingLabel.AutoSize = true;
+            this.EditingLabel.Location = new System.Drawing.Point(1, 4);
+            this.EditingLabel.Name = "EditingLabel";
+            this.EditingLabel.Size = new System.Drawing.Size(88, 13);
+            this.EditingLabel.TabIndex = 6;
+            this.EditingLabel.Text = "Конечный текст";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 350);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.MainSplitContainer);
             this.Controls.Add(this.MethodsGroupBox);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.MainMenuStrip);
             this.MinimumSize = new System.Drawing.Size(611, 228);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Магическая магия мистера Мэджика";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MainMenuStrip.ResumeLayout(false);
+            this.MainMenuStrip.PerformLayout();
             this.MethodsGroupBox.ResumeLayout(false);
             this.MethodsGroupBox.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.MainSplitContainer.Panel1.ResumeLayout(false);
+            this.MainSplitContainer.Panel1.PerformLayout();
+            this.MainSplitContainer.Panel2.ResumeLayout(false);
+            this.MainSplitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
+            this.MainSplitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.TextBox OriginalTextBox;
+        private System.Windows.Forms.MenuStrip MainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.GroupBox MethodsGroupBox;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox KeyTextBox1;
+        private System.Windows.Forms.ComboBox MethodComboBox;
         private System.Windows.Forms.ToolStripMenuItem магияToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox EditingTextBox;
         private System.Windows.Forms.ToolStripMenuItem транслитToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem шифроватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem расшифроватьToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox KeyTextBox2;
+        private System.Windows.Forms.Label KeyLabel2;
+        private System.Windows.Forms.Label KeyLabel1;
+        private System.Windows.Forms.SplitContainer MainSplitContainer;
+        private System.Windows.Forms.Label OriginalLabel;
+        private System.Windows.Forms.Label EditingLabel;
         private System.Windows.Forms.ToolStripMenuItem карусельToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem карусельСПотерямиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem кнопкаToolStripMenuItem;

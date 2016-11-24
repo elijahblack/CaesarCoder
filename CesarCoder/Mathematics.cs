@@ -11,8 +11,8 @@ namespace CesarCoder
         /// <summary>
         /// Поиск наименьшего общего делителя для двух чисел
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
+        /// <param name="a">Первое число</param>
+        /// <param name="b">Второе число</param>
         /// <returns>Возвращает наименьший общий делитель</returns>
         public static long GCD(long a, long b)
         {
