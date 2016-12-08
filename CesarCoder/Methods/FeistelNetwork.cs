@@ -21,14 +21,20 @@ namespace CesarCoder.Methods
         }
 
 
-
+        /// <summary>
+        /// Шифрование
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="key"></param>
+        /// <param name="rounds"></param>
+        /// <returns></returns>
         private static UInt64 FeistelNetworkCrypt(UInt64 data, UInt16 key, int rounds)
         {
             UInt32 left, right, swap;
             int i;
 
-            left = (UInt32)(data & 0xffff);
-            right = (UInt32)((data >> 16) & 0xffff);
+            left = (UInt32)(data & 0xffffffff);
+            right = (UInt32)((data >> 32) & 0xffffffff);
 
             for (i = 0; i < rounds; i++)
             {
@@ -37,16 +43,23 @@ namespace CesarCoder.Methods
                 right = swap;
             }
 
-            return (left | ((UInt64)right << 16));
+            return (left | ((UInt64)right << 32));
         }
 
+        /// <summary>
+        /// Расшифрование
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="key"></param>
+        /// <param name="rounds"></param>
+        /// <returns></returns>
         private static UInt64 FeistelNetworkDecrypt(UInt64 data, UInt16 key, int rounds)
         {
             UInt32 left, right, swap;
             int i;
 
-            left = (UInt32)(data & 0xffff);
-            right = (UInt32)((data >> 16) & 0xffff);
+            left = (UInt32)(data & 0xffffffff);
+            right = (UInt32)((data >> 32) & 0xffffffff);
 
             for (i = rounds - 1; i >= 0; i--)
             {
@@ -55,7 +68,7 @@ namespace CesarCoder.Methods
                 left = swap;
             }
 
-            return (left | ((UInt64)right << 16));
+            return (left | ((UInt64)right << 32));
         }
 
 
@@ -74,11 +87,10 @@ namespace CesarCoder.Methods
 
             return str;
         }
-
-
+        
         private static UInt32 FGamma(UInt32 data_half, UInt16 key)
         {
-            return (data_half ^ ((UInt32)key * 0xabcd1234));
+            return (data_half ^ ((UInt32)key * 0xabcd1234)); // ??????
         }
     }
 }

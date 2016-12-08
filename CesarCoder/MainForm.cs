@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace CesarCoder
@@ -10,6 +11,8 @@ namespace CesarCoder
         int count = 0;
         Timer timer = new Timer() { Interval = 70  };
         string title = "";
+        SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.sound);
+        
 
 
         public MainForm()
@@ -22,7 +25,9 @@ namespace CesarCoder
             // всякое визуальное
             KeyLabel2.Visible = false;
             KeyTextBox2.Visible = false;
+            Icon = Properties.Resources.icon;
             timer.Tick += timer_tick;
+            soundPlayer.Load();
         }
 
        
@@ -199,6 +204,11 @@ namespace CesarCoder
                         // соответствующую кодилку и запишет всё в STR2
                         str2 = _Encoding.GammaCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
+                    case 3: // если выбран четвертый пункт ComboBox'а
+                        // прогоняет строку посимвольно через
+                        // соответствующую кодилку и запишет всё в STR2
+                        str2 = _Encoding.FeistelNetwork(str1, Convert.ToInt32(KeyTextBox1.Text));
+                        break;
                     default:
                         // если будет выбран не первый и не второй ComboBox, то будет тупить,
                         // потому что других там нет
@@ -250,7 +260,7 @@ namespace CesarCoder
             Random rand = new Random();
             title = Text;
             Text = "by Elijah Black";
-            // BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            soundPlayer.Play();
             timer.Start();
         }
 
@@ -262,12 +272,13 @@ namespace CesarCoder
             Random rand = new Random();
             BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
             count = count + 1;
-            if (count > 35)
+            if (count > 100)
             {
                 timer.Stop();
                 BackColor = DefaultBackColor;
                 count = 0;
                 Text = title;
+                soundPlayer.Stop();
             }
         }
     }
