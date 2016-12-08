@@ -50,6 +50,7 @@
     <Compile Include="Mathematics.cs" />
     <Compile Include="Methods\AffineCipher.cs" />
     <Compile Include="Methods\CaesarCipher.cs" />
+    <Compile Include="Methods\FeistelNetwork.cs" />
     <Compile Include="Methods\GammaCipher.cs" />
     <Compile Include="PseudoRandomNumberGenerator.cs" />
     <Compile Include="_Encoding.cs" />
