@@ -8,47 +8,47 @@ namespace CesarCoder.Methods
 {
     class FeistelNetwork
     {
-        public static UInt32 FeistelNetworkCrypt(UInt32 data, UInt16 key, int rounds)
+        UInt64 FeistelNetworkCrypt(UInt64 data, UInt16 key, int rounds)
         {
-            UInt16 left, right, swap;
+            UInt32 left, right, swap;
             int i;
 
-            left = (UInt16)(data & UInt16.MaxValue);
-            right = (UInt16)((data >> 16) & UInt16.MaxValue);
+            left = (UInt32)(data & 0xffff);
+            right = (UInt32)((data >> 16) & 0xffff);
 
             for (i = 0; i < rounds; i++)
             {
-                swap = (UInt16)(left ^ FGamma(right, key));
+                swap = left ^ FGamma(right, key);
                 left = right;
                 right = swap;
             }
 
-            return (left | ((UInt32)right << 16));
+            return (left | ((UInt64)right << 16));
         }
 
-        public static UInt32 FeistelNetworkDecrypt(UInt32 data, UInt16 key, int rounds)
+        UInt64 FeistelNetworkDecrypt(UInt64 data, UInt16 key, int rounds)
         {
-            UInt16 left, right, swap;
+            UInt32 left, right, swap;
             int i;
 
-            left =(UInt16)(data & UInt16.MaxValue);
-            right = (UInt16)((data >> 16) & UInt16.MaxValue);
+            left = (UInt32)(data & 0xffff);
+            right = (UInt32)((data >> 16) & 0xffff);
 
             for (i = rounds - 1; i >= 0; i--)
             {
-                swap = (UInt16)(right ^ FGamma(left, key));
+                swap = right ^ FGamma(left, key);
                 right = left;
                 left = swap;
             }
 
-            return (left | ((UInt32)right << 16));
+            return (left | ((UInt64)right << 16));
         }
 
 
 
-        private static UInt16 FGamma(UInt16 data_half, UInt16 key)
+        UInt32 FGamma(UInt32 data_half, UInt16 key)
         {
-            return (UInt16)(data_half ^ ((UInt16)key * UInt32.Parse("abcd1234", System.Globalization.NumberStyles.HexNumber)));
+            return (data_half ^ ((UInt32)key * 0xabcd1234));
         }
     }
 }
