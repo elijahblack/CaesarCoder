@@ -38,5 +38,11 @@
         {
             return Methods.GammaCipher.Encoding(input, key);
         }
+
+        //
+        public static string FeistelNetwork(string input, int key)
+        {
+            return Methods.FeistelNetwork.Encoding(input, key);
+        }
     }
 }

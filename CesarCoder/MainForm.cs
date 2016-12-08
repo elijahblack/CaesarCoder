@@ -26,6 +26,8 @@ namespace CesarCoder
         }
 
        
+
+
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // открывает файл и заносит текст в верхний textBox
@@ -41,6 +43,7 @@ namespace CesarCoder
 
 
         
+
         private void OnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             // ограничение на ввод только цифр в textBox ключа
@@ -99,6 +102,7 @@ namespace CesarCoder
 
         
 
+
         private void транслитToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // так как кодилки работают только с латиницей, а искать
@@ -141,6 +145,11 @@ namespace CesarCoder
                         // прогоняет строку посимвольно через
                         // соответствующую кодилку и запишет всё в STR2
                         str2 = Coding.GammaCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
+                        break;
+                    case 3: // если выбран четвертый пункт ComboBox'а
+                        // прогоняет строку посимвольно через
+                        // соответствующую кодилку и запишет всё в STR2
+                        str2 = Coding.FeistelNetwork(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
                     default:
                         // если будет выбран не первый и не второй ComboBox, то будет тупить,
@@ -204,6 +213,7 @@ namespace CesarCoder
         }
 
 
+
         private void карусельToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // меняет текст в окнах местами
@@ -243,6 +253,9 @@ namespace CesarCoder
             // BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
             timer.Start();
         }
+
+
+
 
         private void timer_tick(object sender, EventArgs e)
         {

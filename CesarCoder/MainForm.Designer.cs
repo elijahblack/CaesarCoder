@@ -216,7 +216,8 @@
             this.MethodComboBox.Items.AddRange(new object[] {
             "Шифр Цезаря",
             "Аффинный шифр",
-            "Гаммирование"});
+            "Гаммирование",
+            "Сеть Фейстеля"});
             this.MethodComboBox.Location = new System.Drawing.Point(7, 20);
             this.MethodComboBox.Name = "MethodComboBox";
             this.MethodComboBox.Size = new System.Drawing.Size(154, 21);
