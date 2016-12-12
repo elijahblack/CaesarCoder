@@ -9,13 +9,13 @@ namespace CaesarCoder.Methods
     class FeistelNetwork
     {
         //
-        public static string Coding(string input, int key)
+        public static string Encode(string input, int key)
         {
             return "";
         }
 
         //
-        public static string Encoding(string input, int key)
+        public static string Decode(string input, int key)
         {
             return "";
         }

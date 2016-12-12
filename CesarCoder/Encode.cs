@@ -13,7 +13,7 @@
         /// <returns>Возвращает шифрованный текст</returns>
         public static string CaesarCipher(string input, int key)
         {
-            return Methods.CaesarCipher.Coding(input, key);
+            return Methods.CaesarCipher.Encode(input, key);
         }
 
         /// <summary>
@@ -25,7 +25,7 @@
         /// <returns>Возвращает шифрованный текст</returns>
         public static string AffineCipher(string input, char a, char b)
         {
-            return Methods.AffineCipher.Coding(input, a, b);
+            return Methods.AffineCipher.Encode(input, a, b);
         }
         
         /// <summary>
@@ -36,13 +36,13 @@
         /// <returns>Возвращает шифрованный текст</returns>
         public static string GammaCipher(string input, int key)
         {
-            return Methods.GammaCipher.Coding(input, key);            
+            return Methods.GammaCipher.Encode(input, key);            
         }
 
         //
         public static string FeistelNetwork(string input, int key)
         {
-            return Methods.FeistelNetwork.Coding(input, key);
+            return Methods.FeistelNetwork.Encode(input, key);
         }
     }
 }

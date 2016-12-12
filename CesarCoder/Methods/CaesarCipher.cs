@@ -11,7 +11,7 @@
         /// <param name="input">Шифруемая строка</param>
         /// <param name="key">Ключ шифрования</param>
         /// <returns>Возвращает шифрованный текст</returns>
-        public static string Coding(string input, int key)
+        public static string Encode(string input, int key)
         {
             string txt = "";
 
@@ -27,7 +27,7 @@
         /// <param name="input">Расшифруемая строка</param>
         /// <param name="key">Ключ расшифрования</param>
         /// <returns>Возвращает расшифрованный текст</returns>
-        public static string Encoding(string input, int key)
+        public static string Decode(string input, int key)
         {
             string txt = "";
 

@@ -12,7 +12,7 @@
         /// <param name="a">Первый ключ шифрования (множитель)</param>
         /// <param name="b">Второй ключ шифрования (приращение)</param>
         /// <returns>Возвращает шифрованный текст</returns>
-        public static string Coding(string input, char a, char b)
+        public static string Encode(string input, char a, char b)
         {
             string txt = "";
 
@@ -29,7 +29,7 @@
         /// <param name="a">Первый ключ расшифрования (множитель)</param>
         /// <param name="b">Второй ключ расшифрования (приращение)</param>
         /// <returns>Возвращает расшифрованный текст</returns>
-        public static string Encoding(string input, char a, char b)
+        public static string Decode(string input, char a, char b)
         {
             // получает строку с шифрованным текстом и ключ 
             // возвращает расшифрованный текст
