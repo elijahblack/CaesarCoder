@@ -1,4 +1,8 @@
-﻿namespace CaesarCoder
+﻿using CaesarCoder.Methods;
+using System;
+using System.Text;
+
+namespace CaesarCoder
 {
     /// <summary>
     /// Шифрование
@@ -40,9 +44,22 @@
         }
 
         //
-        public static string FeistelNetwork(string input, int key)
+        public static string FeistelNetwork(string input, string key)
         {
             return Methods.FeistelNetwork.Encode(input, key);
+        }
+
+        /// <summary>
+        /// Шифрование при помощи алгоритма RC4
+        /// </summary>
+        /// <param name="input">Шифруемый текст</param>
+        /// <param name="key">Ключ</param>
+        /// <returns></returns>
+        public static string RC4(string input, string key)
+        {
+            //BitConverter.ToString();
+            //new RC4(BitConverter.GetBytes(key))
+            return Encoding.ASCII.GetString(new RC4(Encoding.ASCII.GetBytes(key)).Encode(Encoding.ASCII.GetBytes(input)));
         }
     }
 }

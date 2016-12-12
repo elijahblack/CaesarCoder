@@ -126,15 +126,11 @@ namespace CaesarCoder
             if (KeyTextBox1.Text != "")
                 switch (MethodComboBox.SelectedIndex)
                 {
-                    case 0: // если выбран первый пункт ComboBox'а
-                        // прогоняет строку посимвольно через
-                        // соответствующую кодилку и запишет всё в STR2
+                    case 0: // если выбран [Шифр Цезаря]
                         str2 = Encode.CaesarCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
-                    case 1: // если выбран второй пункт ComboBox'а
-                        // прогоняет строку посимвольно через
-                        // соответствующую кодилку и запишет всё в STR2
-                        if(!("1 3 5 7 9 11 15 17 19 21 23 25").Contains(KeyTextBox1.Text))
+                    case 1: // если выбран [Аффинный шифр]
+                        if (!("1 3 5 7 9 11 15 17 19 21 23 25").Contains(KeyTextBox1.Text))
                         {
                             var res = MessageBox.Show(@"Ключ должен быть из следующего множества: " 
                                             + Environment.NewLine 
@@ -146,18 +142,17 @@ namespace CaesarCoder
                         else
                             str2 += Encode.AffineCipher(str1, (char)(Convert.ToInt32(KeyTextBox1.Text)), (char)(Convert.ToInt32(KeyTextBox2.Text)));
                         break;
-                    case 2: // если выбран третий пункт ComboBox'а
-                        // прогоняет строку посимвольно через
-                        // соответствующую кодилку и запишет всё в STR2
+                    case 2: // если выбран [Гаммирование]
                         str2 = Encode.GammaCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
-                    case 3: // если выбран четвертый пункт ComboBox'а
-                        // прогоняет строку посимвольно через
-                        // соответствующую кодилку и запишет всё в STR2
-                        str2 = Encode.FeistelNetwork(str1, Convert.ToInt32(KeyTextBox1.Text));
+                    case 3: // если выбран [Сеть Фейстеля]
+                        str2 = Encode.FeistelNetwork(str1, KeyTextBox1.Text);
+                        break;
+                    case 4: // если выбран [RC4]
+                        str2 = Encode.RC4(str1, KeyTextBox1.Text);
                         break;
                     default:
-                        // если будет выбран не первый и не второй ComboBox, то будет тупить,
+                        // если будет выбран не существующий ComboBox, то будет тупить,
                         // потому что других там нет
                         MessageBox.Show("эээээээ\n" + MethodComboBox.SelectedIndex, "\"эээээээ\" при шифровании");
                         break;
@@ -179,14 +174,10 @@ namespace CaesarCoder
             if (KeyTextBox1.Text != "")
                 switch (MethodComboBox.SelectedIndex)
                 {
-                    case 0: // если выбран первый пункт ComboBox'а
-                        // прогоняет строку посимвольно через
-                        // соответствующую энкодилку и запишет всё в STR2
+                    case 0: // если выбран [Шифр Цезаря]
                         str2 = Decode.CaesarCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
-                    case 1: // если выбран второй пункт ComboBox'а
-                        // прогоняет строку посимвольно через
-                        // соответствующую энкодилку и запишет всё в STR2
+                    case 1: // если выбран [Аффинный шифр]
                         if (!("1 3 5 7 9 11 15 17 19 21 23 25").Contains(KeyTextBox1.Text))
                         {
                             var res = MessageBox.Show(@"Ключ должен быть из следующего множества: "
@@ -199,22 +190,22 @@ namespace CaesarCoder
                         else
                             str2 += Decode.AffineCipher(str1, (char)(Convert.ToInt32(KeyTextBox1.Text)), (char)(Convert.ToInt32(KeyTextBox2.Text)));
                         break;
-                    case 2: // если выбран третий пункт ComboBox'а
-                        // прогоняет строку посимвольно через
-                        // соответствующую кодилку и запишет всё в STR2
+                    case 2: // если выбран [Гаммирование]
                         str2 = Decode.GammaCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
-                    case 3: // если выбран четвертый пункт ComboBox'а
-                        // прогоняет строку посимвольно через
-                        // соответствующую кодилку и запишет всё в STR2
-                        str2 = Decode.FeistelNetwork(str1, Convert.ToInt32(KeyTextBox1.Text));
+                    case 3: // если выбран [Сеть Фейстеля]
+                        str2 = Decode.FeistelNetwork(str1, KeyTextBox1.Text);
+                        break;
+                    case 4: // если выбран [RC4]
+                        str2 = Decode.RC4(str1, KeyTextBox1.Text);
                         break;
                     default:
-                        // если будет выбран не первый и не второй ComboBox, то будет тупить,
+                        // если будет выбран несуществующий ComboBox, то будет тупить,
                         // потому что других там нет
                         MessageBox.Show("эээээээ\n" + MethodComboBox.SelectedIndex, "\"эээээээ\" при расшифровании");
                         break;
                 }
+
             // а если строка с ключем пуста, попросит ввести ключ и обзовёт рупожопом
             else MessageBox.Show("Введите ключ", "Рукожоп", MessageBoxButtons.OK);
 

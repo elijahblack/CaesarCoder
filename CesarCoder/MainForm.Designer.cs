@@ -218,7 +218,8 @@
             "Шифр Цезаря",
             "Аффинный шифр",
             "Гаммирование",
-            "Сеть Фейстеля"});
+            "Сеть Фейстеля",
+            "RC4"});
             this.MethodComboBox.Location = new System.Drawing.Point(7, 20);
             this.MethodComboBox.Name = "MethodComboBox";
             this.MethodComboBox.Size = new System.Drawing.Size(154, 21);
