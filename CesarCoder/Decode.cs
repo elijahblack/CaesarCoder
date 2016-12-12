@@ -1,9 +1,9 @@
-﻿namespace CesarCoder
+﻿namespace CaesarCoder
 {
     /// <summary>
     /// Расшифрование
     /// </summary>
-    class _Encoding
+    class Decode
     {
         /// <summary>
         /// Расшифрование методом Цезаря

@@ -1,4 +1,4 @@
-﻿namespace CesarCoder
+﻿namespace CaesarCoder
 {
     class Mathematics
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CesarCoder.Methods
+namespace CaesarCoder.Methods
 {
     class FeistelNetwork
     {
@@ -20,6 +20,9 @@ namespace CesarCoder.Methods
             return "";
         }
 
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
         /// Шифрование
@@ -87,7 +90,13 @@ namespace CesarCoder.Methods
 
             return str;
         }
-        
+
+        private static string sFGamma(string data_half, int key)
+        {
+            //foreach (char element in )
+            return (data_half ^ (key * 0xabcd1234).ToString()); // ??????
+        }
+
         private static UInt32 FGamma(UInt32 data_half, UInt16 key)
         {
             return (data_half ^ ((UInt32)key * 0xabcd1234)); // ??????

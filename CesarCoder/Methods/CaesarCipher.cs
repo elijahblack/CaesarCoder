@@ -1,4 +1,4 @@
-﻿namespace CesarCoder.Methods
+﻿namespace CaesarCoder.Methods
 {
     /// <summary>
     /// Шифр Цезаря

@@ -7,8 +7,8 @@
     <ProjectGuid>{F6BDDA55-6832-413B-8AE8-2E35757934C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CesarCoder</RootNamespace>
-    <AssemblyName>CesarCoder</AssemblyName>
+    <RootNamespace>CaesarCoder</RootNamespace>
+    <AssemblyName>CaesarCoder</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,14 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coding.cs" />
+    <Compile Include="Encode.cs" />
     <Compile Include="Mathematics.cs" />
     <Compile Include="Methods\AffineCipher.cs" />
     <Compile Include="Methods\CaesarCipher.cs" />
     <Compile Include="Methods\FeistelNetwork.cs" />
     <Compile Include="Methods\GammaCipher.cs" />
+    <Compile Include="Methods\RC4.cs" />
     <Compile Include="PseudoRandomNumberGenerator.cs" />
-    <Compile Include="_Encoding.cs" />
+    <Compile Include="Decode.cs" />
     <Compile Include="FileClass.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -94,6 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MLG - Dubstep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

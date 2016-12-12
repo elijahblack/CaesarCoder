@@ -1,4 +1,4 @@
-﻿namespace CesarCoder
+﻿namespace CaesarCoder
 {
     /// <summary>
     /// Класс генератора псевдослучайных чисел

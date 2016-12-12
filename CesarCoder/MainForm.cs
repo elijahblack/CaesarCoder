@@ -3,13 +3,13 @@ using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
 
-namespace CesarCoder
+namespace CaesarCoder
 {
     public partial class MainForm : Form
     {
         FileClass File = new FileClass();
         int count = 0;
-        Timer timer = new Timer() { Interval = 70  };
+        Timer timer = new Timer() { Interval = 70  }; int limit = 100; //////////////
         string title = "";
         SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.sound);
         
@@ -129,7 +129,7 @@ namespace CesarCoder
                     case 0: // если выбран первый пункт ComboBox'а
                         // прогоняет строку посимвольно через
                         // соответствующую кодилку и запишет всё в STR2
-                        str2 = Coding.CaesarCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
+                        str2 = Encode.CaesarCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
                     case 1: // если выбран второй пункт ComboBox'а
                         // прогоняет строку посимвольно через
@@ -144,17 +144,17 @@ namespace CesarCoder
                                 break;
                         }
                         else
-                            str2 += Coding.AffineCipher(str1, (char)(Convert.ToInt32(KeyTextBox1.Text)), (char)(Convert.ToInt32(KeyTextBox2.Text)));
+                            str2 += Encode.AffineCipher(str1, (char)(Convert.ToInt32(KeyTextBox1.Text)), (char)(Convert.ToInt32(KeyTextBox2.Text)));
                         break;
                     case 2: // если выбран третий пункт ComboBox'а
                         // прогоняет строку посимвольно через
                         // соответствующую кодилку и запишет всё в STR2
-                        str2 = Coding.GammaCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
+                        str2 = Encode.GammaCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
                     case 3: // если выбран четвертый пункт ComboBox'а
                         // прогоняет строку посимвольно через
                         // соответствующую кодилку и запишет всё в STR2
-                        str2 = Coding.FeistelNetwork(str1, Convert.ToInt32(KeyTextBox1.Text));
+                        str2 = Encode.FeistelNetwork(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
                     default:
                         // если будет выбран не первый и не второй ComboBox, то будет тупить,
@@ -182,7 +182,7 @@ namespace CesarCoder
                     case 0: // если выбран первый пункт ComboBox'а
                         // прогоняет строку посимвольно через
                         // соответствующую энкодилку и запишет всё в STR2
-                        str2 = _Encoding.CaesarCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
+                        str2 = Decode.CaesarCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
                     case 1: // если выбран второй пункт ComboBox'а
                         // прогоняет строку посимвольно через
@@ -197,17 +197,17 @@ namespace CesarCoder
                                 break;
                         }
                         else
-                            str2 += _Encoding.AffineCipher(str1, (char)(Convert.ToInt32(KeyTextBox1.Text)), (char)(Convert.ToInt32(KeyTextBox2.Text)));
+                            str2 += Decode.AffineCipher(str1, (char)(Convert.ToInt32(KeyTextBox1.Text)), (char)(Convert.ToInt32(KeyTextBox2.Text)));
                         break;
                     case 2: // если выбран третий пункт ComboBox'а
                         // прогоняет строку посимвольно через
                         // соответствующую кодилку и запишет всё в STR2
-                        str2 = _Encoding.GammaCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
+                        str2 = Decode.GammaCipher(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
                     case 3: // если выбран четвертый пункт ComboBox'а
                         // прогоняет строку посимвольно через
                         // соответствующую кодилку и запишет всё в STR2
-                        str2 = _Encoding.FeistelNetwork(str1, Convert.ToInt32(KeyTextBox1.Text));
+                        str2 = Decode.FeistelNetwork(str1, Convert.ToInt32(KeyTextBox1.Text));
                         break;
                     default:
                         // если будет выбран не первый и не второй ComboBox, то будет тупить,
@@ -271,11 +271,15 @@ namespace CesarCoder
         {
             Random rand = new Random();
             BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            OriginalTextBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            EditingTextBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
             count = count + 1;
-            if (count > 100)
+            if (count > limit)
             {
                 timer.Stop();
                 BackColor = DefaultBackColor;
+                OriginalTextBox.BackColor = SystemColors.Window;
+                EditingTextBox.BackColor = SystemColors.Window;
                 count = 0;
                 Text = title;
                 soundPlayer.Stop();

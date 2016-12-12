@@ -1,4 +1,4 @@
-﻿namespace CesarCoder
+﻿namespace CaesarCoder
 {
     partial class MainForm
     {
@@ -64,6 +64,7 @@
             this.OriginalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.OriginalTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.OriginalTextBox.Location = new System.Drawing.Point(3, 20);
             this.OriginalTextBox.Multiline = true;
             this.OriginalTextBox.Name = "OriginalTextBox";
