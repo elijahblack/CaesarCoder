@@ -64,6 +64,7 @@ namespace CaesarCoder.Methods
 
             return cipher;
         }
+
         public byte[] Decode(byte[] dataB)
         {
             return Encode(dataB);

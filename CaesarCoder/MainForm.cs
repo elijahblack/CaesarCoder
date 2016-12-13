@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CaesarCoder
@@ -12,7 +13,7 @@ namespace CaesarCoder
 
         // всё, что создается ниже, нужно для того, чтобы не нужно. 
         int count = 0;
-        Timer timer = new Timer() { Interval = 70 }; int limit = 100; //////////////
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer() { Interval = 70 }; int limit = 100; //////////////
         string title = "";
         SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.sound);
         
@@ -31,6 +32,8 @@ namespace CaesarCoder
             Icon = Properties.Resources.icon;
             timer.Tick += timer_tick;
             soundPlayer.Load();
+            pictureBox.Image = Properties.Resources.cat;
+            pictureBox.Visible = false;
         }
 
 
@@ -267,28 +270,83 @@ namespace CaesarCoder
             title = Text;
             Text = "by Elijah Black";
             soundPlayer.Play();
-            timer.Start();
+            //timer.Start();
+
+            //new Thread(() =>
+            //{
+            //    thread();
+            //}).Start();
+
+            //var timer = new System.Threading.Timer(thread, new AutoResetEvent(false), 0, 70);
         }
 
+         
+        //private void thread(Object stateInfo)
+        //{
+        //    Random rand = new Random();
+        //    FormBorderStyle = FormBorderStyle.None;
+        //    BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+        //    OriginalTextBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+        //    EditingTextBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+        //    MethodComboBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+        //    KeyTextBox1.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+        //    if (KeyTextBox2.Visible) KeyTextBox2.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+        //    MainMenuStrip.BackColor = стихиToolStripMenuItem.ForeColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
 
+        //    pictureBox.Visible = pictureBox.Visible ? false : true;
+
+        //    count = count + 1;
+        //    if (count > limit)
+        //    {
+        //        //timer.Stop();
+        //        FormBorderStyle = FormBorderStyle.Sizable;
+        //        BackColor = DefaultBackColor;
+        //        OriginalTextBox.BackColor = SystemColors.Window;
+        //        EditingTextBox.BackColor = SystemColors.Window;
+        //        MethodComboBox.BackColor = SystemColors.Window;
+        //        KeyTextBox1.BackColor = SystemColors.Window;
+        //        if (KeyTextBox2.Visible) KeyTextBox2.BackColor = SystemColors.Window;
+        //        MainMenuStrip.BackColor = DefaultBackColor;
+        //        стихиToolStripMenuItem.ForeColor = SystemColors.ControlLightLight;
+        //        pictureBox.Visible = false;
+        //        count = 0;
+        //        Text = title;
+        //        soundPlayer.Stop();
+        //    }
+        //}
 
         private void timer_tick(object sender, EventArgs e)
         {
-            Random rand = new Random();
-            BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
-            OriginalTextBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
-            EditingTextBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
-            count = count + 1;
-            if (count > limit)
-            {
-                timer.Stop();
-                BackColor = DefaultBackColor;
-                OriginalTextBox.BackColor = SystemColors.Window;
-                EditingTextBox.BackColor = SystemColors.Window;
-                count = 0;
-                Text = title;
-                soundPlayer.Stop();
-            }
+            //Random rand = new Random();
+            //FormBorderStyle = FormBorderStyle.None;
+            //BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            //OriginalTextBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            //EditingTextBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            //MethodComboBox.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            //KeyTextBox1.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            //if (KeyTextBox2.Visible) KeyTextBox2.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+            //MainMenuStrip.BackColor = стихиToolStripMenuItem.ForeColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+
+            //pictureBox.Visible = pictureBox.Visible ? false : true;
+
+            //count = count + 1;
+            //if (count > limit)
+            //{
+            //    timer.Stop();
+            //    FormBorderStyle = FormBorderStyle.Sizable;
+            //    BackColor = DefaultBackColor;
+            //    OriginalTextBox.BackColor = SystemColors.Window;
+            //    EditingTextBox.BackColor = SystemColors.Window;
+            //    MethodComboBox.BackColor = SystemColors.Window;
+            //    KeyTextBox1.BackColor = SystemColors.Window;
+            //    if (KeyTextBox2.Visible) KeyTextBox2.BackColor = SystemColors.Window;
+            //    MainMenuStrip.BackColor = DefaultBackColor;
+            //    стихиToolStripMenuItem.ForeColor = SystemColors.ControlLightLight;
+            //    pictureBox.Visible = false;
+            //    count = 0;
+            //    Text = title;
+            //    soundPlayer.Stop();
+            //}
         }
     }
 }

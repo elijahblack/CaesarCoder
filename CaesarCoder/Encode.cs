@@ -43,7 +43,12 @@ namespace CaesarCoder
             return Methods.GammaCipher.Encode(input, key);            
         }
 
-        //
+        /// <summary>
+        /// Шифрование сетью Фейстеля   
+        /// </summary>
+        /// <param name="input">Шифруемая строка</param>
+        /// <param name="key">Ключ шифрования</param>
+        /// <returns>Возвращает шифрованную строку</returns>
         public static string FeistelNetwork(string input, string key)
         {
             return Methods.FeistelNetwork.Encode(input, key);

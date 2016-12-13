@@ -51,12 +51,14 @@
             this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.OriginalLabel = new System.Windows.Forms.Label();
             this.EditingLabel = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.MainMenuStrip.SuspendLayout();
             this.MethodsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
             this.MainSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // OriginalTextBox
@@ -69,7 +71,7 @@
             this.OriginalTextBox.Multiline = true;
             this.OriginalTextBox.Name = "OriginalTextBox";
             this.OriginalTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.OriginalTextBox.Size = new System.Drawing.Size(480, 132);
+            this.OriginalTextBox.Size = new System.Drawing.Size(480, 122);
             this.OriginalTextBox.TabIndex = 1;
             // 
             // MainMenuStrip
@@ -159,8 +161,8 @@
             // 
             this.кнопкаToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.кнопкаToolStripMenuItem.Name = "кнопкаToolStripMenuItem";
-            this.кнопкаToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.кнопкаToolStripMenuItem.Text = "Кнопка";
+            this.кнопкаToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.кнопкаToolStripMenuItem.Text = "Вжух";
             this.кнопкаToolStripMenuItem.Click += new System.EventHandler(this.кнопкаToolStripMenuItem_Click);
             // 
             // стихиToolStripMenuItem
@@ -214,6 +216,7 @@
             // MethodComboBox
             // 
             this.MethodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MethodComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MethodComboBox.FormattingEnabled = true;
             this.MethodComboBox.Items.AddRange(new object[] {
             "Шифр Цезаря",
@@ -286,11 +289,22 @@
             this.EditingLabel.TabIndex = 6;
             this.EditingLabel.Text = "Конечный текст";
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox.Location = new System.Drawing.Point(12, 196);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(161, 142);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 7;
+            this.pictureBox.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 350);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.MainSplitContainer);
             this.Controls.Add(this.MethodsGroupBox);
             this.Controls.Add(this.MainMenuStrip);
@@ -308,6 +322,7 @@
             this.MainSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
             this.MainSplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,6 +352,7 @@
         private System.Windows.Forms.ToolStripMenuItem карусельСПотерямиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem кнопкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem стихиToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }
 
