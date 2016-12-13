@@ -157,6 +157,7 @@
             // 
             // кнопкаToolStripMenuItem
             // 
+            this.кнопкаToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.кнопкаToolStripMenuItem.Name = "кнопкаToolStripMenuItem";
             this.кнопкаToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.кнопкаToolStripMenuItem.Text = "Кнопка";
@@ -296,7 +297,7 @@
             this.MinimumSize = new System.Drawing.Size(611, 228);
             this.Name = "MainForm";
             this.Text = "Магическая магия мистера Мэджика";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MainMenuStrip.ResumeLayout(false);
             this.MainMenuStrip.PerformLayout();
             this.MethodsGroupBox.ResumeLayout(false);

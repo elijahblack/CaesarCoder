@@ -8,8 +8,11 @@ namespace CaesarCoder
     public partial class MainForm : Form
     {
         FileClass File = new FileClass();
+        bool OnlyNumber = false;
+
+        // всё, что создается ниже, нужно для того, чтобы не нужно. 
         int count = 0;
-        Timer timer = new Timer() { Interval = 70  }; int limit = 100; //////////////
+        Timer timer = new Timer() { Interval = 70 }; int limit = 100; //////////////
         string title = "";
         SoundPlayer soundPlayer = new SoundPlayer(Properties.Resources.sound);
         
@@ -19,8 +22,8 @@ namespace CaesarCoder
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        
+        private void MainForm_Load(object sender, EventArgs e)
         {
             // всякое визуальное
             KeyLabel2.Visible = false;
@@ -30,7 +33,7 @@ namespace CaesarCoder
             soundPlayer.Load();
         }
 
-       
+
 
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,24 +72,15 @@ namespace CaesarCoder
                     if (!Char.IsDigit(element))
                         KeyTextBox1.Text = KeyTextBox1.Text.Replace(element.ToString(), "");
 
-
-                // скрывает textBox второго ключа за ненадобностью, 
-                // скукоживает кнопку и задает ограничение на ввод только цифр
-                KeyLabel2.Visible = false;
-                KeyTextBox2.Visible = false;
-
-                KeyTextBox1.KeyPress += OnlyNumber_KeyPress;
+                // устанавливается ограничение на ввод только цифр
+                // при поможи хитрых манипуляций
+                if (!OnlyNumber)
+                {
+                    KeyTextBox1.KeyPress += OnlyNumber_KeyPress;
+                    OnlyNumber = true;
+                }
             }
-            if (MethodComboBox.SelectedIndex == 1)
-            {
-                // выводит textBox второго ключа за надобностью, 
-                // разкукоживает кнопку и снимает ограничение на ввод только цифр
-                KeyLabel2.Visible = true;
-                KeyTextBox2.Visible = true;
-
-                //textBox3.KeyPress -= OnlyNumber_KeyPress;
-            }
-            if (MethodComboBox.SelectedIndex == 2)
+            else if (MethodComboBox.SelectedIndex == 2)
             {
                 // всё до следующего коментария для того, чтобы удалить
                 // всё, что не цифры, там где нужны только цифры
@@ -94,15 +88,36 @@ namespace CaesarCoder
                     if (!Char.IsDigit(element))
                         KeyTextBox1.Text = KeyTextBox1.Text.Replace(element.ToString(), "");
 
+                // устанавливается ограничение на ввод только цифр
+                // при поможи хитрых манипуляций
+                if (!OnlyNumber)
+                {
+                    KeyTextBox1.KeyPress += OnlyNumber_KeyPress;
+                    OnlyNumber = true;
+                }
+            }
+            // снимает ограничение на ввод цифр, если такое установленно
+            else if (OnlyNumber)
+            {
+                KeyTextBox1.KeyPress -= OnlyNumber_KeyPress;
+                OnlyNumber = false;
+            }
 
+            // манипуляции полем для второго ключа
+            if(MethodComboBox.SelectedIndex != 1 && MethodComboBox.SelectedIndex >= 0)
+            {
                 // скрывает textBox второго ключа за ненадобностью, 
                 // скукоживает кнопку и задает ограничение на ввод только цифр
                 KeyLabel2.Visible = false;
                 KeyTextBox2.Visible = false;
-
-                KeyTextBox1.KeyPress += OnlyNumber_KeyPress;
             }
-            // GammaReDraw();
+            else 
+            {
+                // выводит textBox второго ключа за надобностью, 
+                // разкукоживает кнопку и снимает ограничение на ввод только цифр
+                KeyLabel2.Visible = true;
+                KeyTextBox2.Visible = true;
+            }
         }
 
         
@@ -110,7 +125,7 @@ namespace CaesarCoder
 
         private void транслитToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // так как кодилки работают только с латиницей, а искать
+            // так как некоторые кодилки работают только с латиницей, а искать
             // соответствующий текст мне лень, была сделана функция ТРАНСЛИТА,
             // а эта кнопка делает пиу-пиу и переводит кириллицу в латиницу
             OriginalTextBox.Text = FileClass.Translater(OriginalTextBox.Text);
@@ -247,14 +262,13 @@ namespace CaesarCoder
 
         private void кнопкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // тут мне уже стало скучно
-            Random rand = new Random();
+            // тут мне уже стало скучно 
+            
             title = Text;
             Text = "by Elijah Black";
             soundPlayer.Play();
             timer.Start();
         }
-
 
 
 
