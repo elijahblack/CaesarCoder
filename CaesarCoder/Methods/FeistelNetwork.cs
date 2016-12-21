@@ -3,8 +3,17 @@ using System.Text;
 
 namespace CaesarCoder.Methods
 {
+    /// <summary>
+    /// Сеть Фейстеля
+    /// </summary>
     class FeistelNetwork
     {
+        /// <summary>
+        /// Шифрование сетью Фейстеля
+        /// </summary>
+        /// <param name="input">Шифруемая строка</param>
+        /// <param name="key">Ключ</param>
+        /// <returns>Возвращает шифрованную строку</returns>
         public static string Encode(string input, string key)
         {
             if (key.Length != 0 && key.Length < 8)
@@ -59,6 +68,14 @@ namespace CaesarCoder.Methods
             return Encoding.Default.GetString(res_arr);
         }
 
+        /// <summary>
+        /// Манипуляции блоками при шифровании
+        /// </summary>
+        /// <param name="subblock_left_arr"></param>
+        /// <param name="subblock_right_arr"></param>
+        /// <param name="subblock_key_arr"></param>
+        /// <param name="isLast"></param>
+        /// <returns></returns>
         private static byte[] EncodeBlock(byte[] subblock_left_arr, byte[] subblock_right_arr, byte[] subblock_key_arr, bool isLast)
         {
             int subblock_left = BitConverter.ToInt32(subblock_left_arr, 0);
@@ -94,6 +111,12 @@ namespace CaesarCoder.Methods
             return res_arr;
         }
 
+        /// <summary>
+        /// Расшифрование сетью Фейстеля
+        /// </summary>
+        /// <param name="input">Расшифруемая строка</param>
+        /// <param name="key">Ключ расшифрования</param>
+        /// <returns></returns>
         public static string Decode(string input, string key)
         {
             if (key.Length != 0)
@@ -149,6 +172,14 @@ namespace CaesarCoder.Methods
             return Encoding.Default.GetString(res_arr);
         }
 
+        /// <summary>
+        /// Манипуляция блоками при расшифровании
+        /// </summary>
+        /// <param name="subblock_left_arr"></param>
+        /// <param name="subblock_right_arr"></param>
+        /// <param name="subblock_key_arr"></param>
+        /// <param name="isLast"></param>
+        /// <returns></returns>
         private static byte[] DecodeBlock(byte[] subblock_left_arr, byte[] subblock_right_arr, byte[] subblock_key_arr, bool isLast)
         {
             int subblock_left = BitConverter.ToInt32(subblock_left_arr, 0);
@@ -185,6 +216,12 @@ namespace CaesarCoder.Methods
             return res_arr;
         }
 
+        /// <summary>
+        /// Сдвиг
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         private static int Shift(Int16 left, Int16 right)
         {
             //циклический сдвиг влево на 7
@@ -202,6 +239,12 @@ namespace CaesarCoder.Methods
             return res + right;
         }
         
+        /// <summary>
+        /// Манипуляция ключами
+        /// </summary>
+        /// <param name="key_arr"></param>
+        /// <param name="i"></param>
+        /// <returns></returns>
         private static byte[] ShiftKeyLeft(byte[] key_arr, int i)
         {
             byte[] tmp = new byte[4];
