@@ -24,7 +24,7 @@
             {
                 foreach (char element in input.ToCharArray())
                 {
-                    txt += GammaCipherCoding(element, key);
+                    txt += GammaCipherEncode(element, key);
                     key = (key * A + B) % m;
                 }
             }
@@ -52,7 +52,7 @@
             {
                 foreach (char element in input.ToCharArray())
                 {
-                    txt += GammaCipherEncoding(element, key);
+                    txt += GammaCipherDecode(element, key);
                     key = (key * A + B) % m;
                 }
             }
@@ -68,7 +68,7 @@
         /// <param name="ch">Шифруемый символ</param>
         /// <param name="key">Ключ шифрования</param>
         /// <returns>Возвращает шифрованный символ</returns>
-        private static char GammaCipherCoding(char ch, int key)
+        private static char GammaCipherEncode(char ch, int key)
         {
             return (char)(ch ^ key);
         }
@@ -79,7 +79,7 @@
         /// <param name="ch">Расшифруемый символ</param>
         /// <param name="key">Ключ расшифрования</param>
         /// <returns>Возвращает шифрованный символ</returns>
-        private static char GammaCipherEncoding(char ch, int key)
+        private static char GammaCipherDecode(char ch, int key)
         {
             return (char)(ch ^ key); 
         }

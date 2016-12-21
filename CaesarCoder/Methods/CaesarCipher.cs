@@ -16,7 +16,7 @@
             string txt = "";
 
             foreach (char element in input.ToCharArray())
-                txt += CaesarCipherCoding(element, key);
+                txt += CaesarCipherEncode(element, key);
 
             return txt;
         }
@@ -32,7 +32,7 @@
             string txt = "";
 
             foreach (char element in input.ToCharArray())
-                txt += CaesarCipherEncoding(element, key);
+                txt += CaesarCipherDecode(element, key);
 
             return txt;
         }
@@ -44,7 +44,7 @@
         /// <param name="ch">Шифруемый символ</param>
         /// <param name="key">Ключ шифрования</param>
         /// <returns>Возвращает шифрованный символ</returns>
-        private static char CaesarCipherCoding(char ch, int key)
+        private static char CaesarCipherEncode(char ch, int key)
         {
             return (char)(ch + key);
         }
@@ -55,7 +55,7 @@
         /// <param name="ch">Расшифруемый символ</param>
         /// <param name="key">Ключ расшифрования</param>
         /// <returns>Возвращает расшифрованый символ</returns>
-        private static char CaesarCipherEncoding(char ch, int key)
+        private static char CaesarCipherDecode(char ch, int key)
         {
             return (char)(ch - key);
         }

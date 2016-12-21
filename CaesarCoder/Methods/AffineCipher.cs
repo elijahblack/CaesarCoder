@@ -17,7 +17,7 @@
             string txt = "";
 
             foreach (char element in input.ToCharArray())
-                txt += AffineCipherCoding(element, a, b);
+                txt += AffineCipherEncode(element, a, b);
 
             return txt;
         }
@@ -37,7 +37,7 @@
             string txt = "";
 
             foreach (char element in input.ToCharArray())
-                txt += AffineCipherEncoding(element, a, b);
+                txt += AffineCipherDecode(element, a, b);
 
             return txt;
         }
@@ -50,7 +50,7 @@
         /// <param name="a">Первый ключ шифрования</param>
         /// <param name="b">Второй ключ шифрования</param>
         /// <returns>Возвращает зашифрованный символ</returns>
-        private static char AffineCipherCoding(char ch, char a, char b)
+        private static char AffineCipherEncode(char ch, char a, char b)
         {
             char offset;
 
@@ -70,7 +70,7 @@
         /// <param name="a">Первый ключ расшифрования</param>
         /// <param name="b">Второй ключ расшифрования</param>
         /// <returns>Возвращает расшифрованный символ</returns>
-        private static char AffineCipherEncoding(char ch, char a, char b)
+        private static char AffineCipherDecode(char ch, char a, char b)
         {
             char offset;
 
